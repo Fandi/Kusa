@@ -35,13 +35,26 @@ namespace TOUJOU.Kusa
 			}
 		}
 
-		public bool AreOutcomeEqual
+		public Difference Difference
 		{
 			get
 			{
-				return Before != null &&
+				if (Before != null &&
 					After != null &&
-					Before.OutcomeEquals(After);
+					!Before.OutcomeEquals(After))
+				{
+					return Difference.Outcome;
+				}
+				else if (Before == null)
+				{
+					return Difference.Addition;
+				}
+				else if (After == null)
+				{
+					return Difference.Removal;
+				}
+
+				return Difference.None;
 			}
 		}
 

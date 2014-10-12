@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComparisonDetail.cs" />
+    <Compile Include="Difference.cs" />
     <Compile Include="ErrorInfo.cs" />
     <Compile Include="TestDefinitionComparer.cs" />
     <Compile Include="TRXComparer.cs" />
