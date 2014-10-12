@@ -156,7 +156,7 @@ namespace TOUJOU.Kusa
 			#region Finished
 
 			DateTime finished;
-			XmlAttribute finishedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@finished", nsmgr) as XmlAttribute;
+			XmlAttribute finishedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@finish", nsmgr) as XmlAttribute;
 
 			if (finishedAttribute != null &&
 				DateTime.TryParse(finishedAttribute.Value, out finished))
@@ -192,7 +192,7 @@ namespace TOUJOU.Kusa
 			#region Total
 
 			int total;
-			XmlAttribute totalAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@total", nsmgr) as XmlAttribute;
+			XmlAttribute totalAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@total", nsmgr) as XmlAttribute;
 
 			if (totalAttribute != null &&
 				int.TryParse(totalAttribute.Value, out total))
@@ -205,7 +205,7 @@ namespace TOUJOU.Kusa
 			#region Error
 
 			int error;
-			XmlAttribute errorAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@error", nsmgr) as XmlAttribute;
+			XmlAttribute errorAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@error", nsmgr) as XmlAttribute;
 
 			if (errorAttribute != null &&
 				int.TryParse(errorAttribute.Value, out error))
@@ -218,7 +218,7 @@ namespace TOUJOU.Kusa
 			#region Failed
 
 			int failed;
-			XmlAttribute failedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@failed", nsmgr) as XmlAttribute;
+			XmlAttribute failedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@failed", nsmgr) as XmlAttribute;
 
 			if (failedAttribute != null &&
 				int.TryParse(failedAttribute.Value, out failed))
@@ -231,7 +231,7 @@ namespace TOUJOU.Kusa
 			#region Timeout
 
 			int timeout;
-			XmlAttribute timeoutAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@timeout", nsmgr) as XmlAttribute;
+			XmlAttribute timeoutAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@timeout", nsmgr) as XmlAttribute;
 
 			if (timeoutAttribute != null &&
 				int.TryParse(timeoutAttribute.Value, out timeout))
@@ -244,7 +244,7 @@ namespace TOUJOU.Kusa
 			#region Aborted
 
 			int aborted;
-			XmlAttribute abortedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@aborted", nsmgr) as XmlAttribute;
+			XmlAttribute abortedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@aborted", nsmgr) as XmlAttribute;
 
 			if (abortedAttribute != null &&
 				int.TryParse(abortedAttribute.Value, out aborted))
@@ -257,7 +257,7 @@ namespace TOUJOU.Kusa
 			#region Inconclusive
 
 			int inconclusive;
-			XmlAttribute inconclusiveAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@inconclusive", nsmgr) as XmlAttribute;
+			XmlAttribute inconclusiveAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@inconclusive", nsmgr) as XmlAttribute;
 
 			if (inconclusiveAttribute != null &&
 				int.TryParse(inconclusiveAttribute.Value, out inconclusive))
@@ -270,7 +270,7 @@ namespace TOUJOU.Kusa
 			#region PassedButRunAborted
 
 			int passedButRunAborted;
-			XmlAttribute passedButRunAbortedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@passedButRunAborted", nsmgr) as XmlAttribute;
+			XmlAttribute passedButRunAbortedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@passedButRunAborted", nsmgr) as XmlAttribute;
 
 			if (passedButRunAbortedAttribute != null &&
 				int.TryParse(passedButRunAbortedAttribute.Value, out passedButRunAborted))
@@ -283,7 +283,7 @@ namespace TOUJOU.Kusa
 			#region NotRunnable
 
 			int notRunnable;
-			XmlAttribute notRunnableAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@notRunnable", nsmgr) as XmlAttribute;
+			XmlAttribute notRunnableAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@notRunnable", nsmgr) as XmlAttribute;
 
 			if (notRunnableAttribute != null &&
 				int.TryParse(notRunnableAttribute.Value, out notRunnable))
@@ -296,7 +296,7 @@ namespace TOUJOU.Kusa
 			#region NotExecuted
 
 			int notExecuted;
-			XmlAttribute notExecutedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@notExecuted", nsmgr) as XmlAttribute;
+			XmlAttribute notExecutedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@notExecuted", nsmgr) as XmlAttribute;
 
 			if (notExecutedAttribute != null &&
 				int.TryParse(notExecutedAttribute.Value, out notExecuted))
@@ -309,7 +309,7 @@ namespace TOUJOU.Kusa
 			#region Executed
 
 			int executed;
-			XmlAttribute executedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@executed", nsmgr) as XmlAttribute;
+			XmlAttribute executedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@executed", nsmgr) as XmlAttribute;
 
 			if (executedAttribute != null &&
 				int.TryParse(executedAttribute.Value, out executed))
@@ -322,7 +322,7 @@ namespace TOUJOU.Kusa
 			#region Disconnected
 
 			int disconnected;
-			XmlAttribute disconnectedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@disconnected", nsmgr) as XmlAttribute;
+			XmlAttribute disconnectedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@disconnected", nsmgr) as XmlAttribute;
 
 			if (disconnectedAttribute != null &&
 				int.TryParse(disconnectedAttribute.Value, out disconnected))
@@ -335,7 +335,7 @@ namespace TOUJOU.Kusa
 			#region Warning
 
 			int warning;
-			XmlAttribute warningAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@warning", nsmgr) as XmlAttribute;
+			XmlAttribute warningAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@warning", nsmgr) as XmlAttribute;
 
 			if (warningAttribute != null &&
 				int.TryParse(warningAttribute.Value, out warning))
@@ -348,7 +348,7 @@ namespace TOUJOU.Kusa
 			#region Passed
 
 			int passed;
-			XmlAttribute passedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@passed", nsmgr) as XmlAttribute;
+			XmlAttribute passedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@passed", nsmgr) as XmlAttribute;
 
 			if (passedAttribute != null &&
 				int.TryParse(passedAttribute.Value, out passed))
@@ -361,7 +361,7 @@ namespace TOUJOU.Kusa
 			#region Completed
 
 			int completed;
-			XmlAttribute completedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@completed", nsmgr) as XmlAttribute;
+			XmlAttribute completedAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@completed", nsmgr) as XmlAttribute;
 
 			if (completedAttribute != null &&
 				int.TryParse(completedAttribute.Value, out completed))
@@ -374,7 +374,7 @@ namespace TOUJOU.Kusa
 			#region InProgress
 
 			int inProgress;
-			XmlAttribute inProgressAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@inProgress", nsmgr) as XmlAttribute;
+			XmlAttribute inProgressAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@inProgress", nsmgr) as XmlAttribute;
 
 			if (inProgressAttribute != null &&
 				int.TryParse(inProgressAttribute.Value, out inProgress))
@@ -387,7 +387,7 @@ namespace TOUJOU.Kusa
 			#region Pending
 
 			int pending;
-			XmlAttribute pendingAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:Times/@pending", nsmgr) as XmlAttribute;
+			XmlAttribute pendingAttribute = documentElement.SelectSingleNode("/ns:TestRun/ns:ResultSummary/ns:Counters/@pending", nsmgr) as XmlAttribute;
 
 			if (pendingAttribute != null &&
 				int.TryParse(pendingAttribute.Value, out pending))
