@@ -26,7 +26,7 @@ namespace TOUJOU.Kusa
 
 		public int GetHashCode(TestDefinition obj)
 		{
-			return obj.GetHashCode();
+			return obj.Key.GetHashCode();
 		}
 
 		public int Compare(TestDefinition x, TestDefinition y)

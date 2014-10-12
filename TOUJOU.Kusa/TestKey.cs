@@ -40,12 +40,22 @@ namespace TOUJOU.Kusa
 
 		public bool Equals(TestKey other)
 		{
+			if (other == null)
+			{
+				return false;
+			}
+
 			return this.key == other.key &&
 				this.context == other.context;
 		}
 
 		public int CompareTo(TestKey other)
 		{
+			if (other == null)
+			{
+				throw new ArgumentNullException("other");
+			}
+
 			int result = Comparer<int>.Default.Compare(this.context, other.context);
 
 			if (result == 0)
@@ -54,6 +64,11 @@ namespace TOUJOU.Kusa
 			}
 
 			return result;
+		}
+
+		public override int GetHashCode()
+		{
+			return context ^ key;
 		}
 	}
 }
