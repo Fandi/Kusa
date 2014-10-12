@@ -32,10 +32,10 @@ namespace TOUJOU.Kusa
 				throw new ArgumentNullException("methodName");
 			}
 
-			ClassName = className;
-			MethodName = methodName;
-			context = ClassName.Split(",".ToCharArray())[0].Trim().GetHashCode();
-			key = MethodName.Trim().GetHashCode();
+			ClassName = className.Split(",".ToCharArray())[0].Trim();
+			MethodName = methodName.Trim();
+			context = ClassName.GetHashCode();
+			key = MethodName.GetHashCode();
 		}
 
 		public bool Equals(TestKey other)
