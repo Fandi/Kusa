@@ -3,7 +3,7 @@ using System.Xml;
 
 namespace TOUJOU.Kusa
 {
-	public class TestDefinition : IEquatable<TestDefinition>, IComparable<TestDefinition>
+	public class TestDefinition
 	{
 		public TestKey Key { get; protected set; }
 		public TestResult Result { get; protected set; }
@@ -63,26 +63,6 @@ namespace TOUJOU.Kusa
 			}
 
 			Result = new TestResult(testResultElement);
-		}
-
-		public bool Equals(TestDefinition other)
-		{
-			if (other == null)
-			{
-				return false;
-			}
-
-			return this.Key.Equals(other.Key);
-		}
-
-		public int CompareTo(TestDefinition other)
-		{
-			if (other == null)
-			{
-				throw new ArgumentNullException("other");
-			}
-
-			return this.Key.CompareTo(other.Key);
 		}
 	}
 }

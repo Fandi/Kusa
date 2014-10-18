@@ -21,11 +21,16 @@ namespace TOUJOU.Kusa
 				return false;
 			}
 
-			return x.Equals(y);
+			return x.Key.Equals(y.Key);
 		}
 
 		public int GetHashCode(TestDefinition obj)
 		{
+			if (obj == null)
+			{
+				throw new ArgumentNullException("obj");
+			}
+
 			return obj.Key.GetHashCode();
 		}
 
@@ -45,7 +50,7 @@ namespace TOUJOU.Kusa
 				throw new ArgumentNullException("y");
 			}
 
-			return x.CompareTo(y);
+			return x.Key.CompareTo(y.Key);
 		}
 	}
 }

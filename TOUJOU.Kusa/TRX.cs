@@ -47,37 +47,7 @@ namespace TOUJOU.Kusa
 			}
 		}
 
-		private TRX()
-		{
-			IsTimeSummaryLoaded = false;
-			Queuing = null;
-			Start = null;
-			Finished = null;
-
-			IsCounterSummaryLoaded = false;
-			Total = null;
-			Error = null;
-			Failed = null;
-			Timeout = null;
-			Aborted = null;
-			Inconclusive = null;
-			PassedButRunAborted = null;
-			NotRunnable = null;
-			NotExecuted = null;
-			Executed = null;
-			Disconnected = null;
-			Warning = null;
-			Passed = null;
-			Completed = null;
-			InProgress = null;
-			Pending = null;
-
-			AreTestDefinitionsLoaded = false;
-			testDefinitions = null;
-		}
-
 		public TRX(string testResultFileName, bool timeSummary = true, bool counterSummary = true, bool testDefinitions = true)
-			: this()
 		{
 			if (testResultFileName == null)
 			{
@@ -411,14 +381,7 @@ namespace TOUJOU.Kusa
 
 			foreach (XmlNode testDefinitionElement in xmlElement.SelectNodes("/ns:TestRun/ns:TestDefinitions/ns:UnitTest", nsmgr))
 			{
-				try
-				{
-					testDefinitions.Add(new TestDefinition(testDefinitionElement as XmlElement));
-				}
-				catch
-				{
-					// TODO: handle non-usable TestDefinition here
-				}
+				testDefinitions.Add(new TestDefinition(testDefinitionElement as XmlElement));
 			}
 
 			AreTestDefinitionsLoaded = true;
@@ -475,12 +438,6 @@ namespace TOUJOU.Kusa
 		public static TRX GetSnapshot(string testResultFileName)
 		{
 			return new TRX(testResultFileName, true, true, false);
-		}
-
-		public static IEnumerable<TestDefinition> GetTestDefinitions(string testResultFileName)
-		{
-			//TODO: get only TestDefinitions
-			throw new NotImplementedException();
 		}
 	}
 }
