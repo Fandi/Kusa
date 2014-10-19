@@ -104,15 +104,5 @@ namespace TOUJOU.Kusa
 
 			#endregion
 		}
-
-		public bool OutcomeEquals(TestResult other)
-		{
-			if (other == null)
-			{
-				return false;
-			}
-
-			return this.Outcome.Equals(other.Outcome);
-		}
 	}
 }

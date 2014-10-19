@@ -40,10 +40,18 @@ namespace TOUJOU.Kusa
 			get
 			{
 				if (Before != null &&
-					After != null &&
-					!Before.OutcomeEquals(After))
+					After != null)
 				{
-					return Difference.Outcome;
+					if (Before.Outcome != After.Outcome)
+					{
+						return Difference.Outcome;
+					}
+					else if (Before.Outcome == Outcome.Failed && /*After.Outcome == Outcome.Failed*/
+						(Before.Output.ErrorInfo.Message != Before.Output.ErrorInfo.Message ||
+						Before.Output.ErrorInfo.StackTrace != Before.Output.ErrorInfo.StackTrace))
+					{
+						return Difference.ReasonOfFailure;
+					}
 				}
 				else if (Before == null)
 				{

@@ -41,9 +41,8 @@ namespace TOUJOU.Kusa
 			{
 				IEnumerable<TestResult> beforeList = testResult1.TestDefinitions.Where(testDefinition => testDefinition.Key.Equals(key)).Select(testDefinition => testDefinition.Result);
 				IEnumerable<TestResult> afterList = testResult2.TestDefinitions.Where(testDefinition => testDefinition.Key.Equals(key)).Select(testDefinition => testDefinition.Result);
-				ComparisonDetail comparisonDetail = new ComparisonDetail(key, beforeList, afterList);
 
-				comparisonSummary.AddDetail(comparisonDetail);
+				comparisonSummary.AddDetail(key, beforeList, afterList);
 			}
 
 			return comparisonSummary;

@@ -5,6 +5,7 @@
 		None,
 		Addition,
 		Removal,
-		Outcome
+		Outcome,
+		ReasonOfFailure
 	}
 }

@@ -22,9 +22,9 @@ namespace TOUJOU.Kusa
 			details = new List<ComparisonDetail>();
 		}
 
-		internal protected void AddDetail(ComparisonDetail detail)
+		internal protected void AddDetail(TestKey key, IEnumerable<TestResult> beforeList, IEnumerable<TestResult> afterList)
 		{
-			details.Add(detail);
+			details.Add(new ComparisonDetail(key, beforeList, afterList));
 		}
 	}
 }
